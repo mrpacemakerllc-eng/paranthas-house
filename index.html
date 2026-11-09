@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Paranthas House Catering</title>
+<meta name="description" content="Vegetarian Indian and Moroccan catering in Orlando. Boxed lunches, buffet packages and party trays, ordered 24 hours ahead.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Hind:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --paper: #FAFAF7;
+    --surface: #FFFFFF;
+    --ink: #1A231E;
+    --muted: #5A645E;
+    --line: #E3E6E0;
+    --green: #1F3D30;
+    --green-soft: #EDF2EE;
+    --saffron: #B87B0A;
+    --saffron-soft: #FBF2DF;
+    --blue: #2B4EA2;
+    --blue-soft: #E9EEF8;
+    --on-dark: #FAFAF7;
+    --display: "Marcellus", "Times New Roman", serif;
+    --body: "Hind", "Segoe UI", system-ui, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --paper: #101512; --surface: #161D19; --ink: #ECEFEA; --muted: #A2ADA6; --line: #26302A;
+      --green: #9CCBB0; --green-soft: #1A2620; --saffron: #E8B04A; --saffron-soft: #2A2314;
+      --blue: #93AAEA; --blue-soft: #1A2134; --on-dark: #FAFAF7;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --paper: #101512; --surface: #161D19; --ink: #ECEFEA; --muted: #A2ADA6; --line: #26302A;
+    --green: #9CCBB0; --green-soft: #1A2620; --saffron: #E8B04A; --saffron-soft: #2A2314;
+    --blue: #93AAEA; --blue-soft: #1A2134; --on-dark: #FAFAF7;
+  }
+
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.6; }
+  .wrap { max-width: 1080px; margin-inline: auto; padding-inline: 20px; }
+  h1, h2, h3 { font-family: var(--display); font-weight: 400; line-height: 1.15; margin: 0; text-wrap: balance; }
+  h1 { font-size: clamp(2.3rem, 5vw, 3.6rem); }
+  h2 { font-size: clamp(1.7rem, 3.4vw, 2.3rem); }
+  h3 { font-size: 1.35rem; }
+  p { margin: 0; }
+  a { color: var(--green); }
+  img { max-width: 100%; display: block; }
+  :focus-visible { outline: 3px solid var(--saffron); outline-offset: 2px; }
+  .eyebrow { font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--saffron); font-weight: 600; }
+
+  /* header */
+  .bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: var(--paper); border-bottom: 1px solid var(--line); }
+  .bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 14px; flex-wrap: wrap; }
+  .logo { font-family: var(--display); font-size: 1.5rem; color: var(--ink); text-decoration: none; line-height: 1; }
+  .logo small { display: block; font-family: var(--body); font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+  nav { display: flex; gap: 22px; flex-wrap: wrap; }
+  nav a { color: var(--ink); text-decoration: none; font-weight: 500; }
+  nav a:hover { color: var(--saffron); }
+  .bar-cta { display: flex; align-items: center; gap: 14px; }
+  .phone { font-weight: 600; color: var(--ink); text-decoration: none; white-space: nowrap; }
+  .btn { display: inline-block; font: 600 1rem var(--body); padding: 11px 22px; border-radius: 4px; text-decoration: none; border: 2px solid var(--green); cursor: pointer; }
+  .btn-solid { background: var(--green); color: var(--paper); }
+  .btn-light { background: var(--paper); color: #1F3D30; border-color: var(--paper); }
+  .btn-outline-light { background: transparent; color: #FAFAF7; border-color: #FAFAF7; }
+
+  /* hero */
+  .hero { position: relative; min-height: 520px; display: flex; align-items: flex-end; background: #1F3D30 url("img/hero-tagine.jpg") center 55% / cover no-repeat; }
+  .hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,16,12,.15) 0%, rgba(10,16,12,.72) 100%); }
+  .hero .wrap { position: relative; padding-block: 64px 56px; color: #FAFAF7; display: flex; flex-direction: column; gap: 16px; width: 100%; }
+  .hero h1 { max-width: 15em; color: #FAFAF7; }
+  .hero p { max-width: 36em; font-size: 1.15rem; color: #EDEFEA; }
+  .hero .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 6px; }
+
+  .facts { background: var(--green); color: var(--on-dark); }
+  .facts .wrap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding-block: 18px; }
+  .facts div { display: flex; flex-direction: column; }
+  .facts b { font-weight: 600; color: #FAFAF7; }
+  .facts span { color: #C9D6CE; font-size: .95rem; }
+  :root[data-theme="dark"] .facts { background: #1A2620; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .facts { background: #1A2620; } }
+
+  section { padding-block: 64px; }
+  section + section { border-top: 1px solid var(--line); }
+  .head { display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; max-width: 44rem; }
+  .head p { color: var(--muted); }
+
+  /* menu */
+  .menu { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .cuisine { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; }
+  .cuisine img { aspect-ratio: 16 / 9; object-fit: cover; width: 100%; }
+  .cuisine .body { padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 14px; }
+  .cuisine.indian h3 { color: var(--saffron); }
+  .cuisine.moroccan h3 { color: var(--blue); }
+  .dish { display: flex; justify-content: space-between; gap: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+  .dish:last-child { border-bottom: 0; padding-bottom: 0; }
+  .dish b { font-weight: 600; display: block; }
+  .dish span { color: var(--muted); font-size: .96rem; }
+  .tags { display: flex; gap: 4px; flex: none; align-items: flex-start; }
+  .tag { font-size: .7rem; font-weight: 600; letter-spacing: .04em; border: 1px solid var(--line); border-radius: 3px; padding: 1px 6px; color: var(--muted); }
+  .legend { margin-top: 18px; color: var(--muted); font-size: .92rem; }
+  .extras { margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .extras div { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 16px 20px; }
+  .extras b { font-weight: 600; }
+
+  /* packages */
+  .packages { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  .pkg { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 22px; display: flex; flex-direction: column; gap: 10px; }
+  .pkg.feature { border-color: var(--green); box-shadow: 0 0 0 1px var(--green); }
+  .pkg .price { font-family: var(--display); font-size: 2rem; line-height: 1; color: var(--green); }
+  .pkg .price small { font-family: var(--body); font-size: .9rem; color: var(--muted); }
+  .pkg .min { font-size: .9rem; color: var(--muted); }
+  .pkg ul { margin: 4px 0 0; padding-left: 1.1em; color: var(--ink); font-size: .96rem; display: flex; flex-direction: column; gap: 4px; }
+  .pkg-note { margin-top: 18px; color: var(--muted); font-size: .95rem; }
+
+  /* gallery */
+  .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .gallery figure { margin: 0; position: relative; overflow: hidden; border-radius: 4px; }
+  .gallery img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  .gallery figcaption { position: absolute; left: 0; bottom: 0; padding: 6px 10px; font-size: .85rem; color: #fff; background: rgba(0,0,0,.45); border-top-right-radius: 4px; }
+
+  /* about */
+  .about { display: grid; grid-template-columns: 1fr 1.1fr; gap: 40px; align-items: center; }
+  .about img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 6px; }
+  .about .text { display: flex; flex-direction: column; gap: 16px; }
+  .about .text p { color: var(--ink); }
+  .sign { font-family: var(--display); font-size: 1.3rem; color: var(--green); }
+
+  /* how + faq */
+  .how { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; list-style: none; padding: 0; margin: 0; counter-reset: s; }
+  .how li { counter-increment: s; border-top: 2px solid var(--green); padding-top: 14px; display: flex; flex-direction: column; gap: 6px; }
+  .how li::before { content: "Step " counter(s); font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--saffron); font-weight: 600; }
+  .how b { font-weight: 600; }
+  .how span { color: var(--muted); }
+  .faq { margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; }
+  details { border-bottom: 1px solid var(--line); padding-block: 14px; }
+  summary { font-weight: 600; cursor: pointer; }
+  details p { color: var(--muted); margin-top: 8px; }
+
+  /* contact */
+  .contact { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; }
+  .contact-info { display: flex; flex-direction: column; gap: 18px; }
+  .contact-info .item small { display: block; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  .contact-info .item strong { font-size: 1.2rem; font-weight: 600; word-break: break-word; }
+  form { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .f { display: flex; flex-direction: column; gap: 6px; }
+  .f.full { grid-column: 1 / -1; }
+  label { font-weight: 600; font-size: .95rem; }
+  input, select, textarea { font: 1rem var(--body); padding: 10px 12px; border: 1px solid var(--line); border-radius: 4px; background: var(--paper); color: var(--ink); width: 100%; }
+  textarea { min-height: 90px; resize: vertical; }
+  .result { grid-column: 1 / -1; background: var(--green-soft); border-radius: 4px; padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+  .result pre { margin: 0; white-space: pre-wrap; font: .95rem var(--body); }
+  .result .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .status { color: var(--muted); font-size: .9rem; }
+
+  footer { border-top: 1px solid var(--line); padding-block: 36px 48px; color: var(--muted); font-size: .92rem; }
+  footer .top { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-bottom: 18px; }
+  footer .credits { font-size: .78rem; line-height: 1.5; }
+  footer .credits a { color: var(--muted); }
+
+  @media (max-width: 900px) {
+    .packages { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 760px) {
+    nav { display: none; }
+    .menu, .extras, .about, .contact, .faq, .how, .facts .wrap { grid-template-columns: 1fr; }
+    .gallery { grid-template-columns: 1fr 1fr; }
+    form { grid-template-columns: 1fr; }
+    .hero { min-height: 440px; }
+  }
+  @media (max-width: 480px) {
+    .packages { grid-template-columns: 1fr; }
+    .phone { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="logo" href="#top">Paranthas House<small>Vegetarian Catering · Orlando</small></a>
+    <nav aria-label="Main">
+      <a href="#menu">Menu</a>
+      <a href="#packages">Packages</a>
+      <a href="#about">Our Story</a>
+      <a href="#order">Order</a>
+    </nav>
+    <div class="bar-cta">
+      <a class="phone" href="tel:+14070000000">(407) 000-0000</a>
+      <a class="btn btn-solid" href="#order">Get a quote</a>
+    </div>
+  </div>
+</header>
+
+<div class="hero" id="top" role="img" aria-label="A vegetable tagine served in a clay pot">
+  <div class="wrap">
+    <span class="eyebrow" style="color:#F2C66B">Indian &amp; Moroccan · 100% Vegetarian</span>
+    <h1>Home-style vegetarian catering for Orlando</h1>
+    <p>Tagines, parathas, dal and fresh breads, cooked the day of your event and delivered to your office, team or gathering.</p>
+    <div class="actions">
+      <a class="btn btn-light" href="#order">Request a quote</a>
+      <a class="btn btn-outline-light" href="#menu">View the menu</a>
+    </div>
+  </div>
+</div>
+
+<div class="facts">
+  <div class="wrap">
+    <div><b>100% vegetarian kitchen</b><span>No meat, fish or poultry, ever</span></div>
+    <div><b>24 hours' notice</b><span>Order by text, phone or email</span></div>
+    <div><b>Orlando &amp; Winter Park</b><span>Delivered and set up for you</span></div>
+  </div>
+</div>
+
+<main>
+  <section id="menu" aria-labelledby="menu-h">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">Menu</span>
+        <h2 id="menu-h">Two kitchens, one table</h2>
+        <p>Every dish is mild by default, with spice served on the side. Mix Indian and Moroccan dishes in the same order.</p>
+      </div>
+      <div class="menu">
+        <article class="cuisine indian">
+          <img src="img/aloo-paratha.jpg" alt="Aloo paratha served with dal, yogurt and pickle" loading="lazy">
+          <div class="body">
+            <h3>Indian</h3>
+            <div class="dish"><div><b>Paneer Tikka Paratha Roll</b><span>Grilled paneer and peppers wrapped in flaky paratha</span></div><div class="tags"><span class="tag">V</span></div></div>
+            <div class="dish"><div><b>Aloo Paratha</b><span>Spiced potato flatbread with raita and pickle</span></div><div class="tags"><span class="tag">V</span></div></div>
+            <div class="dish"><div><b>Chana Masala &amp; Jeera Rice</b><span>Chickpeas in tomato-onion masala over cumin rice</span></div><div class="tags"><span class="tag">VG</span><span class="tag">GF</span></div></div>
+            <div class="dish"><div><b>Dal Tadka</b><span>Yellow lentils tempered with garlic, cumin and chili</span></div><div class="tags"><span class="tag">V</span><span class="tag">GF</span></div></div>
+          </div>
+        </article>
+        <article class="cuisine moroccan">
+          <img src="img/tagine-2.jpg" alt="Moroccan vegetable tagine with chickpeas" loading="lazy">
+          <div class="body">
+            <h3>Moroccan</h3>
+            <div class="dish"><div><b>Vegetable Tagine &amp; Couscous</b><span>Slow-cooked vegetables with apricot, olive and warm spices</span></div><div class="tags"><span class="tag">VG</span></div></div>
+            <div class="dish"><div><b>Harira</b><span>Tomato, lentil and chickpea soup with fresh herbs</span></div><div class="tags"><span class="tag">VG</span></div></div>
+            <div class="dish"><div><b>Zaalouk with Khobz</b><span>Smoky eggplant and tomato dip with Moroccan bread</span></div><div class="tags"><span class="tag">VG</span></div></div>
+            <div class="dish"><div><b>Chickpea &amp; Herb Salad</b><span>Cumin, lemon, parsley and olive oil</span></div><div class="tags"><span class="tag">VG</span><span class="tag">GF</span></div></div>
+          </div>
+        </article>
+      </div>
+      <div class="extras">
+        <div><b>Sweets</b><br>Chai shortbread · Moroccan almond cookies</div>
+        <div><b>Drinks</b><br>Masala chai · Moroccan mint tea · Mango lassi</div>
+      </div>
+      <p class="legend">V vegetarian · VG vegan · GF gluten-free. Every dish is labeled with its allergens. Tell us about allergies when you order.</p>
+    </div>
+  </section>
+
+  <section id="packages" aria-labelledby="pkg-h">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">Packages</span>
+        <h2 id="pkg-h">Priced per person</h2>
+        <p>Plates, napkins, utensils and serving spoons are included with every order.</p>
+      </div>
+      <div class="packages">
+        <div class="pkg">
+          <h3>Boxed Lunch</h3>
+          <div class="price">$18 <small>/ person</small></div>
+          <div class="min">10 guests minimum</div>
+          <ul><li>One roll or bowl per person</li><li>Side salad and chutney</li><li>A house-baked sweet</li><li>Individually labeled</li></ul>
+        </div>
+        <div class="pkg">
+          <h3>Indian Spread</h3>
+          <div class="price">$24 <small>/ person</small></div>
+          <div class="min">15 guests minimum</div>
+          <ul><li>Two mains</li><li>Jeera rice and paratha</li><li>Salad and raita</li><li>Dessert</li></ul>
+        </div>
+        <div class="pkg">
+          <h3>Moroccan Feast</h3>
+          <div class="price">$26 <small>/ person</small></div>
+          <div class="min">15 guests minimum</div>
+          <ul><li>Vegetable tagine and couscous</li><li>Harira or zaalouk</li><li>Khobz bread and salad</li><li>Mint tea</li></ul>
+        </div>
+        <div class="pkg feature">
+          <h3>Two Kitchens</h3>
+          <div class="price">$30 <small>/ person</small></div>
+          <div class="min">20 guests minimum</div>
+          <ul><li>Two Indian and two Moroccan dishes</li><li>Rice, couscous and breads</li><li>Salads and dips</li><li>Sweets with chai or mint tea</li></ul>
+        </div>
+      </div>
+      <p class="pkg-note">Delivery within Orlando and Winter Park is $25. Larger events, buffet setup and custom menus are quoted separately.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="gal-h">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">From our kitchen</span>
+        <h2 id="gal-h">What we cook</h2>
+      </div>
+      <div class="gallery">
+        <figure><img src="img/dal-tadka.jpg" alt="Dal tadka" loading="lazy"><figcaption>Dal tadka</figcaption></figure>
+        <figure><img src="img/zaalouk.jpg" alt="Zaalouk eggplant dip" loading="lazy"><figcaption>Zaalouk</figcaption></figure>
+        <figure><img src="img/indian-thali.jpg" alt="Indian vegetarian thali" loading="lazy"><figcaption>Indian thali</figcaption></figure>
+        <figure><img src="img/harira.jpg" alt="Harira soup with bread" loading="lazy"><figcaption>Harira</figcaption></figure>
+        <figure><img src="img/paneer-tikka.jpg" alt="Paneer tikka" loading="lazy"><figcaption>Paneer tikka</figcaption></figure>
+        <figure><img src="img/couscous.jpg" alt="Couscous with vegetables" loading="lazy"><figcaption>Vegetable couscous</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" aria-labelledby="about-h">
+    <div class="wrap about">
+      <img src="img/mint-tea.jpg" alt="Moroccan mint tea poured into glasses" loading="lazy">
+      <div class="text">
+        <span class="eyebrow">Our Story</span>
+        <h2 id="about-h">A family kitchen in Orlando</h2>
+        <p>Paranthas House started around our own table. Rachida cooks the Moroccan side of the menu: slow tagines, harira, fresh breads and the cookies she bakes for every gathering. Eric brings the Indian side: parathas, dal and chana, made the way his family makes them.</p>
+        <p>We keep the menu vegetarian so everyone at the table can eat everything on it. We cook each order the day it's delivered, and we deliver it ourselves.</p>
+        <p>Whether it's lunch for a clinic team or dinner for fifty, we'd love to cook for you.</p>
+        <span class="sign">Rachida &amp; Eric</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="order" aria-labelledby="order-h">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">How to order</span>
+        <h2 id="order-h">Three steps, 24 hours ahead</h2>
+      </div>
+      <ol class="how">
+        <li><b>Tell us about your event</b><span>Date, time, number of guests and address, by text, phone, email or the form below.</span></li>
+        <li><b>Get your quote</b><span>We reply with a menu and price, usually the same day.</span></li>
+        <li><b>We cook and deliver</b><span>Made fresh that morning and set up at your location.</span></li>
+      </ol>
+
+      <div class="faq">
+        <details><summary>How much notice do you need?</summary><p>At least 24 hours for boxed lunches and packages. For events over 50 guests, please give us a week.</p></details>
+        <details><summary>Is everything vegetarian?</summary><p>Yes. Our kitchen never cooks meat, fish or poultry. Many dishes are vegan or gluten-free.</p></details>
+        <details><summary>Can you handle allergies?</summary><p>Tell us about any allergies when you order. We label every dish and can adjust most recipes.</p></details>
+        <details><summary>Where do you deliver?</summary><p>Orlando, Winter Park and nearby areas. Ask us about locations farther out.</p></details>
+        <details><summary>How do I pay?</summary><p>We send an invoice when we confirm your order. Cards are accepted.</p></details>
+        <details><summary>Can I change my headcount?</summary><p>Yes, up to 24 hours before delivery.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="quote-h">
+    <div class="wrap contact">
+      <div class="contact-info">
+        <span class="eyebrow">Contact</span>
+        <h2 id="quote-h">Request a quote</h2>
+        <p style="color:var(--muted)">Fill in the form, or reach us directly.</p>
+        <div class="item"><small>Text or call</small><strong><a href="tel:+14070000000">(407) 000-0000</a></strong></div>
+        <div class="item"><small>Email</small><strong><a href="mailto:hello@paranthashouse.com">hello@paranthashouse.com</a></strong></div>
+        <div class="item"><small>Service area</small><strong>Orlando &amp; Winter Park, FL</strong></div>
+      </div>
+
+      <form id="quote" novalidate>
+        <div class="f"><label for="q-name">Your name</label><input id="q-name" autocomplete="name"></div>
+        <div class="f"><label for="q-phone">Phone</label><input id="q-phone" type="tel" autocomplete="tel"></div>
+        <div class="f"><label for="q-date">Event date</label><input id="q-date" type="date"></div>
+        <div class="f"><label for="q-guests">Number of guests</label><input id="q-guests" type="number" min="10" inputmode="numeric"></div>
+        <div class="f full"><label for="q-pkg">Package</label>
+          <select id="q-pkg">
+            <option>Boxed Lunch ($18 / person)</option>
+            <option>Indian Spread ($24 / person)</option>
+            <option>Moroccan Feast ($26 / person)</option>
+            <option>Two Kitchens ($30 / person)</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="f full"><label for="q-notes">Delivery address and notes</label><textarea id="q-notes" placeholder="Address, delivery time, allergies"></textarea></div>
+        <div class="f full"><button class="btn btn-solid" type="submit">Prepare my request</button></div>
+        <div class="result" id="q-result" hidden>
+          <pre id="q-text"></pre>
+          <div class="row">
+            <a class="btn btn-solid" id="q-sms" href="#">Send by text</a>
+            <a class="btn" id="q-mail" href="#" style="color:var(--green)">Send by email</a>
+            <button class="btn" type="button" id="q-copy" style="color:var(--green);background:transparent">Copy</button>
+            <span class="status" id="q-status" role="status"></span>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <div><strong style="color:var(--ink)">Paranthas House Catering</strong><br>Vegetarian Indian &amp; Moroccan · Orlando, FL</div>
+      <div>(407) 000-0000 · hello@paranthashouse.com</div>
+    </div>
+    <p class="credits">Photos via Wikimedia Commons:
+      vegetable tagine by Turajski (<a href="https://commons.wikimedia.org/wiki/File:Vegetable_Tagine.jpg">CC BY-SA 4.0</a>);
+      tagine by 16:9clue (<a href="https://commons.wikimedia.org/wiki/File:Vegetable_Tajine_(5342012559).jpg">CC BY 2.0</a>);
+      aloo paratha by AjayDas (<a href="https://commons.wikimedia.org/wiki/File:Aloo_paratha_served_with_daal,_curd_and_achar.jpg">CC BY-SA 4.0</a>);
+      dal tadka by AugustineKajur (<a href="https://commons.wikimedia.org/wiki/File:Dal_Tadka-Delhi.jpg">CC BY-SA 4.0</a>);
+      zaalouk by Arnaud 25 (<a href="https://commons.wikimedia.org/wiki/File:Zaalouk_03.jpg">CC0</a>);
+      thali by Dev Jadiya (<a href="https://commons.wikimedia.org/wiki/File:Indian_vegetarian_thali_in_Paris,_France.jpg">CC BY-SA 4.0</a>);
+      harira by -ani (<a href="https://commons.wikimedia.org/wiki/File:Harira_vegetarisch.jpg">Free Art License</a>);
+      paneer tikka by Srikoundinya66 (<a href="https://commons.wikimedia.org/wiki/File:Paneer_tikka_1.jpg">CC BY-SA 4.0</a>);
+      couscous by Luca Nebuloni (<a href="https://commons.wikimedia.org/wiki/File:Couscous_with_vegetables_(6177185023).jpg">CC BY 2.0</a>);
+      mint tea by Sarkar Sayantan (<a href="https://commons.wikimedia.org/wiki/File:Moroccan_Mint_Tea_-_1.jpg">CC BY-SA 4.0</a>).
+      Photos resized and cropped.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var PHONE = "+14070000000", EMAIL = "hello@paranthashouse.com";
+  var $ = function (id) { return document.getElementById(id); };
+  $("quote").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var lines = [
+      "Catering request",
+      "Name: " + ($("q-name").value || "-"),
+      "Phone: " + ($("q-phone").value || "-"),
+      "Date: " + ($("q-date").value || "-"),
+      "Guests: " + ($("q-guests").value || "-"),
+      "Package: " + $("q-pkg").value,
+      "Notes: " + ($("q-notes").value || "-")
+    ];
+    var text = lines.join("\n");
+    $("q-text").textContent = text;
+    $("q-sms").href = "sms:" + PHONE + "?&body=" + encodeURIComponent(text);
+    $("q-mail").href = "mailto:" + EMAIL + "?subject=" + encodeURIComponent("Catering request") + "&body=" + encodeURIComponent(text);
+    $("q-result").hidden = false;
+    $("q-status").textContent = "";
+  });
+  $("q-copy").addEventListener("click", function () {
+    var t = $("q-text").textContent, s = $("q-status");
+    try {
+      navigator.clipboard.writeText(t).then(function () { s.textContent = "Copied."; },
+        function () { s.textContent = "Select the text above and copy it."; });
+    } catch (err) { s.textContent = "Select the text above and copy it."; }
+  });
+})();
+</script>
+</body>
+</html>
